@@ -126,9 +126,10 @@ def info(k: str, v: str) -> str:
 SUMMARY_HTML = (
     "<p>خريج هندسة النفط والغاز من جامعة تونتك الماليزية " + ltr("2017/2018") + "، "
     "الأول على الدفعة بتقدير ممتاز ومعدل " + ltr("95%") + ". "
-    "خبرة ميدانية في الإشراف على حفر " + ltr("21") + " بئرًا ومراقبة المكامن الإنتاجية، "
+    "خبرة ميدانية في الإشراف على حفر " + ltr("12") + " بئرًا ومراقبة المكامن الإنتاجية، "
     "وتشغيل وصيانة مشاريع خدمية وإنتاجية، إلى جانب عمل إداري وتدريسي في التعليم "
-    "المهني والفني والجامعي. أستكمل مرحلة تمهيدي الماجستير في إدارة الأعمال "
+    "المهني والفني والجامعي، وإجادة برامج " + ltr("Microsoft Office") + " في إعداد "
+    "التقارير والجداول والمراسلات. أستكمل مرحلة تمهيدي الماجستير في إدارة الأعمال "
     "بجامعة سبأ " + ltr("2026") + "، وأسعى لتسخير هذه الخبرة في رفع كفاءة التشغيل "
     "وتطوير الأداء الفني والمؤسسي.</p>"
 )
@@ -136,7 +137,7 @@ SUMMARY_HTML = (
 # خبرات ملف مجد (مع صياغة مهنية موسّعة كما طُلب في الملف)
 MAJD_GROUPS = [
     title("مهندس حفر ومراقب جيولوجي للمكامن الإنتاجية | اليمن") +
-    bullet("الإشراف الهندسي على حفر " + ltr("21") + " بئرًا ومتابعة القراءات الجيولوجية "
+    bullet("الإشراف الهندسي على حفر " + ltr("12") + " بئرًا ومتابعة القراءات الجيولوجية "
            "للمكامن الإنتاجية لضمان سلامة الحفر وكفاءة الإنتاج.") +
     bullet("تقييم طبقات المكامن ومتابعة مؤشرات الإنتاج بالتنسيق مع فرق الحفر والصيانة الميدانية."),
 
@@ -147,7 +148,8 @@ MAJD_GROUPS = [
 
     title("موظف فني - الإدارة الفنية | شركة المياه والصرف الصحي") +
     bullet("تقديم الدعم الفني للإدارة الفنية في متابعة الأعمال التشغيلية وإعداد "
-           "البيانات والتقارير الفنية للشركة."),
+           "البيانات والتقارير الفنية للشركة.") +
+    bullet("إعداد التقارير والجداول والمراسلات باستخدام برامج " + ltr("Microsoft Office") + "."),
 
     title("مدير صندوق النشء والشباب للتعليم المهني والفني | " + ltr("2020") + " - إحدى المحافظات") +
     bullet("إدارة برامج الصندوق في إحدى المحافظات ومتابعة تنفيذ مبادرات التعليم "
@@ -180,7 +182,7 @@ ORIGINAL_GROUPS = [
 ]
 
 PERSONAL_HTML = (
-    info("البريد الإلكتروني", ltr("albatoolsaif94.sa@gmail.com")) +
+    info("البريد الإلكتروني", ltr("magdalialshaheri@yahoo.com")) +
     info("رقم الجوال", ltr("0500232807")) +
     info("رقم الهاتف", ltr("00966530663905")) +
     info("الجنسية", "يمني") +
@@ -210,6 +212,8 @@ SKILLS_HTML = "".join(bullet(s) for s in [
     "التواصل الفعال مع العملاء",
     "الأداء الجماعي",
     "الحفاظ على أسرار العمل",
+    "إجادة برامج " + ltr("Microsoft Office: Word - Excel"),
+    "استخدام " + ltr("ChatGPT - Copilot - Agent") + " في إعداد التقارير",
 ])
 
 # ----------------------------------------------------------------------------
@@ -326,7 +330,7 @@ def build() -> None:
     X0, X1, HEAD1 = 385, 585, 548
 
     def right_section(icon: str, heading: str, html: str, css: str,
-                      width: float, gap_after: float = 9):
+                      width: float, gap_after: float = 8):
         nonlocal ry
         add((X0, ry, HEAD1, ry + 24), f"<p>{heading}</p>", CSS_SHEAD)
         icons.append((icon, 566, ry + 12))
@@ -339,13 +343,13 @@ def build() -> None:
 
     ry = 255.0
     right_section("personal", "المعلومات الشخصية", PERSONAL_HTML, CSS_INFO, X1 - X0)
-    dividers.append((RIGHT_X, ry, W, ry)); ry += 9
+    dividers.append((RIGHT_X, ry, W, ry)); ry += 8
     right_section("education", "التعليم", EDU_HTML, CSS_EDU, X1 - X0)
-    dividers.append((RIGHT_X, ry, W, ry)); ry += 9
+    dividers.append((RIGHT_X, ry, W, ry)); ry += 8
     right_section("courses", "الدورات التدريبية", COURSES_HTML, CSS_LIST, X1 - X0)
-    dividers.append((RIGHT_X, ry, W, ry)); ry += 9
+    dividers.append((RIGHT_X, ry, W, ry)); ry += 8
     right_section("skills", "المهارات", SKILLS_HTML, CSS_LIST, X1 - X0)
-    dividers.append((RIGHT_X, ry, W, ry)); ry += 9
+    dividers.append((RIGHT_X, ry, W, ry)); ry += 8
 
     add((X0, ry, HEAD1, ry + 24), "<p>اللغات</p>", CSS_SHEAD)
     icons.append(("languages", 566, ry + 12))
