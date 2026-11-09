@@ -183,7 +183,6 @@ ORIGINAL_GROUPS = [
 
 PERSONAL_HTML = (
     info("البريد الإلكتروني", ltr("magdalialshaheri@yahoo.com")) +
-    info("رقم الجوال", ltr("0500232807")) +
     info("رقم الهاتف", ltr("00966530663905")) +
     info("الجنسية", "يمني") +
     info("تاريخ الميلاد", ltr("15/02/1994")) +
